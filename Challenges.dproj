@@ -160,6 +160,8 @@
         <DCCReference Include="Solutions\Solutions.IsPalindrome.pas"/>
         <DCCReference Include="Solutions\Solutions.LongestCommonPrefix.pas"/>
         <DCCReference Include="Fixtures\Fixtures.LongestCommonPrefix.pas"/>
+        <DCCReference Include="Solutions\Solutions.ValidParentheses.pas"/>
+        <DCCReference Include="Fixtures\Fixtures.ValidParentheses.pas"/>
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
