@@ -1,3 +1,9 @@
+{***********************************************************************************************}
+{                                                                                               }
+{ Given a number return the Fibonacci Sequence. For example, given 5 return [0, 1, 1, 2, 3]     }
+{                                                                                               }
+{***********************************************************************************************}
+
 unit Solutions.FibonacciSequence;
 
 interface
@@ -21,7 +27,7 @@ begin
 
   var last : Int64 := 0;
   var next : Int64 := 1;
-  var temp : Int64 := 0;
+  var temp : Int64;
 
   var count := n - 1;
 

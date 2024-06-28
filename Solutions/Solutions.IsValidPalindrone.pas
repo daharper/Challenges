@@ -1,3 +1,18 @@
+{***********************************************************************************************}
+{                                                                                               }
+{ A phrase is a palindrome if, after converting all uppercase letters into lowercase letters    }
+{ and removing all non-alphanumeric characters, it reads the same forward and backward.         }
+{                                                                                               }
+{ Alphanumeric characters include letters and numbers.                                          }
+{                                                                                               }
+{ - Given "A man, a plan, a canal: Panama" return true                                          }
+{ - Given "race a car" return false                                                             }
+{ - Given " " return true                                                                       }
+{                                                                                               }
+{ For more details, see: https://leetcode.com/problems/valid-palindrome/description/            }
+{                                                                                               }
+{***********************************************************************************************}
+
 unit Solutions.IsValidPalindrone;
 
 interface

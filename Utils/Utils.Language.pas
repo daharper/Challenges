@@ -16,22 +16,33 @@ type
     class operator Finalize(var Dest: TTuple<T1, T2>);  
   end;
 
-  TMem = class
+  { Language extensions - for generic functions }
+  Dx = class
+    { if the type is a class it will be disposed of }
     class procedure Dispose<T>(value: T);
+
+    { if the condition is true, return the true value, otherwise the false }
+    class function Iff<T>(Condition: boolean; TrueValue, FalseValue: T): T;
+
+    { assumes items is not empty }
+    class function First<T>(const items: array of T): T;
+    class function Last<T>(const items: array of T): T;
+    class function Empty<T>(const items: array of T): boolean;
+    class function HasItems<T>(const items: array of T): boolean;
+    class function CountOf<T>(count: integer; const items: array of T): boolean;
   end;
 
   TInt64List = TList<Int64>;
   TIntArray = array of integer;
   TIntMap = TDictionary<integer, integer>;
   TStrMap = TDictionary<string, string>;
-
   TIntPair = TTuple<Integer, Integer>;
-  
+
 implementation
 
 uses
   System.SysUtils, System.Classes, RTTI;
-        
+
 { TTuple<T1, T2> }
 
 {------------------------------------------------------------------------------------------------------------}
@@ -51,17 +62,56 @@ end;
 {------------------------------------------------------------------------------------------------------------}
 class operator TTuple<T1, T2>.Finalize(var Dest: TTuple<T1, T2>);
 begin  
-  TMem.Dispose<T1>(Dest.First);
-  TMem.Dispose<T2>(Dest.Second);
+  Dx.Dispose<T1>(Dest.First);
+  Dx.Dispose<T2>(Dest.Second);
 end;
 
-{ TMem }
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.CountOf<T>(count: integer; const items: array of T): boolean;
+begin
+  Result := Length(items) = count;
+end;
+
+{ Tx }
 
 {------------------------------------------------------------------------------------------------------------}
-class procedure TMem.Dispose<T>(value: T);
+class procedure Dx.Dispose<T>(value: T);
 begin
-  if GetTypeKind(T) = tkClass then  
+  if GetTypeKind(T) = tkClass then
     (PObject(@value)^).Free;
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.Empty<T>(const items: array of T): boolean;
+begin
+  Result := Length(items) = 0;
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.First<T>(const items: array of T): T;
+begin
+  Result := items[Low(items)];
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.HasItems<T>(const items: array of T): boolean;
+begin
+  Result := Length(items) > 0;
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.Iff<T>(Condition: boolean; TrueValue, FalseValue: T): T;
+begin
+  if Condition then
+    Result := TrueValue
+  else
+    Result := FalseValue;
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.Last<T>(const items: array of T): T;
+begin
+  Result := items[High(items)];
 end;
 
 end.

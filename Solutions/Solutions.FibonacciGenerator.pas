@@ -1,3 +1,20 @@
+{***********************************************************************************************}
+{                                                                                               }
+{ Write a generator function that returns a generator object which yields the fibonacci         }
+{ sequence, one call at a time. For example:                                                    }
+{                                                                                               }
+{   const gen = fibGenerator();                                                                 }
+{                                                                                               }
+{   gen.next().value; // 0                                                                      }
+{   gen.next().value; // 1                                                                      }
+{   gen.next().value; // 1                                                                      }
+{   gen.next().value; // 2                                                                      }
+{   gen.next().value; // 3                                                                      }
+{                                                                                               }
+{ For more details, see: https://leetcode.com/problems/generate-fibonacci-sequence/description/ }
+{                                                                                               }
+{***********************************************************************************************}
+
 unit Solutions.FibonacciGenerator;
 
 interface
