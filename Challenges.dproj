@@ -156,6 +156,8 @@
         <DCCReference Include="Utils\Utils.Language.pas"/>
         <DCCReference Include="Solutions\Solutions.SearchInsertPosition.pas"/>
         <DCCReference Include="Fixtures\Fixtures.SearchInsertPosition.pas"/>
+        <DCCReference Include="Fixtures\Fixtures.IsPalindrome.pas"/>
+        <DCCReference Include="Solutions\Solutions.IsPalindrome.pas"/>
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

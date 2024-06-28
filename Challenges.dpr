@@ -25,7 +25,9 @@ uses
   Fixtures.TwoSum in 'Fixtures\Fixtures.TwoSum.pas',
   Utils.Language in 'Utils\Utils.Language.pas',
   Solutions.SearchInsertPosition in 'Solutions\Solutions.SearchInsertPosition.pas',
-  Fixtures.SearchInsertPosition in 'Fixtures\Fixtures.SearchInsertPosition.pas';
+  Fixtures.SearchInsertPosition in 'Fixtures\Fixtures.SearchInsertPosition.pas',
+  Fixtures.IsPalindrome in 'Fixtures\Fixtures.IsPalindrome.pas',
+  Solutions.IsPalindrome in 'Solutions\Solutions.IsPalindrome.pas';
 
 { keep comment here to protect the following conditional from being removed by the IDE when adding a unit }
 {$IFNDEF TESTINSIGHT}
