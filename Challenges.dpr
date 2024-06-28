@@ -27,7 +27,9 @@ uses
   Solutions.SearchInsertPosition in 'Solutions\Solutions.SearchInsertPosition.pas',
   Fixtures.SearchInsertPosition in 'Fixtures\Fixtures.SearchInsertPosition.pas',
   Fixtures.IsPalindrome in 'Fixtures\Fixtures.IsPalindrome.pas',
-  Solutions.IsPalindrome in 'Solutions\Solutions.IsPalindrome.pas';
+  Solutions.IsPalindrome in 'Solutions\Solutions.IsPalindrome.pas',
+  Solutions.LongestCommonPrefix in 'Solutions\Solutions.LongestCommonPrefix.pas',
+  Fixtures.LongestCommonPrefix in 'Fixtures\Fixtures.LongestCommonPrefix.pas';
 
 { keep comment here to protect the following conditional from being removed by the IDE when adding a unit }
 {$IFNDEF TESTINSIGHT}

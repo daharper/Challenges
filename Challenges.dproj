@@ -158,6 +158,8 @@
         <DCCReference Include="Fixtures\Fixtures.SearchInsertPosition.pas"/>
         <DCCReference Include="Fixtures\Fixtures.IsPalindrome.pas"/>
         <DCCReference Include="Solutions\Solutions.IsPalindrome.pas"/>
+        <DCCReference Include="Solutions\Solutions.LongestCommonPrefix.pas"/>
+        <DCCReference Include="Fixtures\Fixtures.LongestCommonPrefix.pas"/>
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

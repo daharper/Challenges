@@ -27,15 +27,19 @@ type
     { assumes items is not empty }
     class function First<T>(const items: array of T): T;
     class function Last<T>(const items: array of T): T;
-    class function Empty<T>(const items: array of T): boolean;
+    class function Empty<T>(const items: array of T): boolean; overload;
     class function HasItems<T>(const items: array of T): boolean;
     class function CountOf<T>(count: integer; const items: array of T): boolean;
+
+    class function Empty(const str: string): boolean; overload;
+    class function NotEmpty(const str: string): boolean;
   end;
 
   TInt64List = TList<Int64>;
   TIntArray = array of integer;
   TIntMap = TDictionary<integer, integer>;
   TStrMap = TDictionary<string, string>;
+  TStrArray = array of string;
   TIntPair = TTuple<Integer, Integer>;
 
 implementation
@@ -82,6 +86,12 @@ begin
 end;
 
 {------------------------------------------------------------------------------------------------------------}
+class function Dx.Empty(const str: string): boolean;
+begin
+  Result := Length(str) = 0;
+end;
+
+{------------------------------------------------------------------------------------------------------------}
 class function Dx.Empty<T>(const items: array of T): boolean;
 begin
   Result := Length(items) = 0;
@@ -112,6 +122,12 @@ end;
 class function Dx.Last<T>(const items: array of T): T;
 begin
   Result := items[High(items)];
+end;
+
+{------------------------------------------------------------------------------------------------------------}
+class function Dx.NotEmpty(const str: string): boolean;
+begin
+  Result := Length(str) > 0;
 end;
 
 end.
