@@ -8,5 +8,5 @@ To run the tests:
 
 - ensure [TestInsight](https://files.spring4d.com/TestInsight/latest/TestInsightSetup.zip) is installed
 - open the TestInsight Explorer from the View menu
-- Click the blue play (run) button
+- click the blue play (run) button
 
